@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chinelos Vicari — chinelos e sandálias bordados à mão</title>
+<meta name="description" content="Chinelos e sandálias bordados à mão com pérolas, pedrarias e flores. Peças sob encomenda e pronta entrega. Peça pelo WhatsApp.">
+<meta name="theme-color" content="#5C1F2B">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Chinelos Vicari — personalizados">
+<meta property="og:description" content="Seus pés merecem joia. Chinelos e sandálias bordados à mão, do jeitinho que você sonhou.">
+<meta property="og:image" content="vicari-logo.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="vicari-logo.png">
+<link rel="apple-touch-icon" href="vicari-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Playfair+Display:wght@500;700;800;900&display=swap" rel="stylesheet">
+<script>document.documentElement.className += ' js';</script>
+<style>
+:root{
+  --vinho:#5C1F2B; --vinho-2:#471620;
+  --ouro:#C8A46A; --ouro-tinta:#8A6628;
+  --marfim:#FAF6F1; --rose:#E9C3B8; --texto:#2B1A1E;
+  --raio:28px; --header:68px;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Jost',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--header)}
+body{font-family:var(--sans);background:var(--marfim);color:var(--texto);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;cursor:pointer;color:inherit}
+:focus-visible{outline:3px solid var(--ouro);outline-offset:3px}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+section{scroll-margin-top:var(--header)}
+h1,h2,h3{font-family:var(--serif);line-height:1.08;color:var(--vinho)}
+h2{font-size:clamp(2rem,6vw,3.2rem);font-weight:700}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* botões */
+.btn{--fill:var(--ouro);--fc:var(--vinho-2);position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:46px;padding:0 24px;border-radius:999px;border:1.5px solid var(--vinho);background:var(--vinho);color:#fff;font-weight:500;font-size:.95rem;text-decoration:none;transition:color .35s,border-color .35s}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--fill);transform:scaleX(0);transform-origin:left center;transition:transform .5s cubic-bezier(.7,0,.2,1)}
+.btn.pill{--fill:var(--vinho);--fc:#fff;background:transparent;color:var(--vinho);border-width:1px;min-height:44px;padding:0 20px;font-size:.88rem}
+.btn.pill.light{--fill:#fff;--fc:var(--vinho);border-color:rgba(255,255,255,.7);color:#fff}
+.btn.gold{--fill:var(--vinho);--fc:#fff;background:var(--ouro);border-color:var(--ouro);color:var(--vinho-2)}
+.btn:hover,.btn:focus-visible{color:var(--fc)!important}
+.btn:hover::before,.btn:focus-visible::before{transform:scaleX(1)}
+.btn.sm{min-height:44px;padding:0 18px;font-size:.88rem;width:100%}
+
+/* topo */
+header{position:fixed;inset:0 0 auto 0;z-index:50;height:var(--header)}
+header::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(250,246,241,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,164,106,.35);opacity:0;transform:scaleY(1);transform-origin:top;transition:opacity .4s,transform .4s}
+header.scrolled::before{opacity:1;transform:scaleY(.84)}
+.bar{transition:transform .4s}
+.brand{transition:transform .4s;transform-origin:left center}
+header.scrolled .bar{transform:translateY(-5px)}
+header.scrolled .brand{transform:scale(.9)}
+header.scrolled .mmenu{top:calc(var(--header)*.84)}
+.bar{height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.brand span{font-family:var(--serif);font-weight:700;letter-spacing:.38em;color:var(--vinho);font-size:1.05rem}
+nav ul{list-style:none;display:none;gap:26px;align-items:center}
+nav a.lk{font-size:.86rem;text-decoration:none;font-weight:400;position:relative;padding:12px 0}
+nav a.lk::after{content:"";position:absolute;left:0;bottom:6px;height:1px;width:0;background:var(--ouro);transition:width .3s}
+nav a.lk:hover::after{width:100%}
+.bar .btn{min-height:44px;padding:0 20px;font-size:.88rem;display:none}
+.burger{width:46px;height:46px;border:0;background:none;display:grid;place-content:center;gap:6px;border-radius:50%}
+.burger i{display:block;width:24px;height:2px;background:var(--vinho);transition:.3s}
+.burger[aria-expanded=true] i:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger[aria-expanded=true] i:nth-child(2){opacity:0}
+.burger[aria-expanded=true] i:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.mmenu{position:fixed;top:var(--header);left:0;right:0;background:var(--marfim);padding:8px 20px 24px;display:none;border-bottom:1px solid rgba(200,164,106,.4);box-shadow:0 20px 40px rgba(92,31,43,.12)}
+.mmenu.open{display:block}
+.mmenu a.lk{display:flex;align-items:center;min-height:52px;font-size:1.05rem;text-decoration:none;border-bottom:1px solid rgba(200,164,106,.3)}
+.mmenu .btn{margin-top:18px;width:100%}
+
+/* hero */
+.hero{padding:calc(var(--header) + 36px) 0 56px;position:relative}
+.hero .wrap{display:grid;gap:44px}
+.hero h1{font-size:clamp(3.2rem,15vw,6.6rem);font-weight:900;letter-spacing:-.02em;line-height:.98}
+.hero p.lead{margin-top:22px;max-width:30ch;font-size:1.15rem;font-weight:300}
+.hero .pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.hero-art{position:relative;height:min(112vw,460px);margin-top:10px}
+.hero-block{position:absolute;inset:0 0 28px 12%;background:var(--vinho);border-radius:44px}
+.hero-block::after{content:"✦";position:absolute;top:22px;right:26px;color:var(--ouro);font-size:1.4rem}
+.hero-art img{position:absolute;left:0;bottom:0;width:78%;height:auto;aspect-ratio:734/800;object-fit:cover;border-radius:30px;transform:rotate(-4deg);box-shadow:0 30px 60px rgba(43,26,30,.35);border:1px solid rgba(200,164,106,.7)}
+.hero-tag{position:absolute;left:calc(12% + 22px);top:26px;color:#fff;font-size:.8rem;letter-spacing:.12em;text-align:left}
+.hero-tag b{display:block;font-family:var(--serif);font-weight:500;font-size:1.05rem;letter-spacing:0;color:var(--ouro)}
+
+/* palavra gigante */
+.bigword{display:flex;justify-content:center;overflow:hidden;white-space:nowrap;font-family:var(--serif);font-weight:900;font-size:36vw;line-height:.82;color:rgba(200,164,106,.17);user-select:none;pointer-events:none;padding:2vw 0 0;margin-bottom:-3vw}
+
+/* títulos de seção */
+.bigword span{display:block;will-change:transform}
+.sec{padding:76px 0}
+.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:34px}
+.sec-head p{max-width:46ch;font-weight:300}
+.gold-line{width:56px;height:2px;background:var(--ouro);margin-top:6px}
+
+/* pronta entrega */
+.pe-top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.arrows{display:none;gap:8px}
+.arrows button{width:46px;height:46px;border-radius:50%;border:1px solid var(--vinho);background:none;color:var(--vinho);font-size:1.2rem;transition:.25s}
+.arrows button:hover{background:var(--vinho);color:#fff}
+.track{display:flex;gap:18px;scroll-padding-inline:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 20px 26px;margin:0 -20px;scrollbar-width:thin;scrollbar-color:var(--ouro) transparent;-webkit-overflow-scrolling:touch}
+.pe{flex:0 0 min(72vw,270px);scroll-snap-align:start;background:#fff;border-radius:var(--raio);overflow:hidden;border:1px solid rgba(200,164,106,.35);display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s}
+.pe:hover{transform:translateY(-5px);box-shadow:0 22px 40px rgba(92,31,43,.14)}
+.pe .ph{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--rose)}
+.pe img,.card img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.pe:hover img,.card:hover img{transform:scale(1.05)}
+.sel{position:absolute;left:12px;top:12px;background:var(--vinho);color:var(--ouro);font-family:var(--serif);font-weight:700;font-size:1.25rem;padding:6px 16px;border-radius:999px;border:1px solid var(--ouro)}
+.pe .info{padding:16px 16px 18px;display:flex;flex-direction:column;gap:4px;flex:1}
+.nome{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+.preco{font-family:var(--serif);font-weight:700;font-size:1.25rem;color:var(--ouro-tinta)}
+.pe .btn{margin-top:auto}
+.pe .preco{margin-bottom:0}
+.pe .pix{font-size:.78rem;color:rgba(43,26,30,.75);margin-bottom:10px}
+
+/* coleção */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 20px 14px;margin:0 -20px 24px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;min-height:44px;padding:0 20px;border-radius:999px;border:1px solid rgba(92,31,43,.35);background:transparent;font-size:.9rem;transition:.25s}
+.tab:hover{border-color:var(--vinho)}
+.tab[aria-selected=true]{background:var(--vinho);border-color:var(--vinho);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{background:#fff;border-radius:22px;overflow:hidden;border:1px solid rgba(200,164,106,.3);display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(92,31,43,.13)}
+.card .ph{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--rose)}
+.etq{position:absolute;left:10px;bottom:10px;background:rgba(250,246,241,.94);color:var(--vinho);font-size:.7rem;font-weight:500;letter-spacing:.06em;padding:4px 11px;border-radius:999px}
+.card .info{padding:12px 12px 14px;display:flex;flex-direction:column;gap:3px;flex:1}
+.card .nome{font-size:.7rem;min-height:2.5em}
+.card .btn{margin-top:auto}
+.card .preco{margin-bottom:10px}
+.card.hide{display:none}
+
+/* feito à mão */
+.hand .wrap{display:grid;gap:36px;align-items:center}
+.hand-img{position:relative}
+.hand-img img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:var(--raio);}
+.hand-img::before{content:"";position:absolute;inset:18px -12px -12px 18px;border:1px solid var(--ouro);border-radius:var(--raio);z-index:-1}
+.points{list-style:none;display:grid;gap:22px;margin-top:8px}
+.points li{display:flex;gap:18px;align-items:flex-start;padding-bottom:22px;border-bottom:1px solid rgba(200,164,106,.5)}
+.points li:last-child{border:0}
+.points b{font-family:var(--serif);font-size:2.4rem;line-height:1;color:var(--ouro-tinta);font-weight:500}
+.points p{font-size:1.1rem;padding-top:4px}
+
+/* passos */
+.steps{background:linear-gradient(var(--rose),var(--rose));background-color:var(--rose)}
+.steps ol{list-style:none;display:grid;gap:14px;counter-reset:p}
+.steps li{counter-increment:p;background:var(--marfim);border-radius:var(--raio);padding:22px 22px 22px 84px;position:relative;font-size:1.1rem;min-height:84px;display:flex;align-items:center}
+.steps li::before{content:counter(p);position:absolute;left:22px;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:var(--vinho);color:var(--ouro);display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:1.25rem}
+
+/* customize */
+.custom{background:var(--vinho);color:#fff;padding:76px 0;position:relative;overflow:hidden}
+.custom h2{color:#fff}
+.custom .lead{max-width:40ch;font-size:1.2rem;font-weight:300;margin-top:14px}
+.custom .lead{max-width:52ch}
+.proc{list-style:none;display:grid;gap:22px;margin:38px 0 40px}
+.proc li{display:flex;flex-direction:column;gap:10px;padding:14px 14px 24px;border:1px solid rgba(200,164,106,.45);border-radius:var(--raio);background:rgba(255,255,255,.05)}
+.pmedia{position:relative;border-radius:20px;overflow:hidden;margin-bottom:8px;aspect-ratio:9/10;background:var(--vinho-2)}
+.pmedia img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 0;transform:scale(1.04);transform-origin:50% 0}
+.pn{position:absolute;left:12px;top:12px;z-index:1;width:42px;height:42px;border-radius:50%;background:var(--ouro);color:var(--vinho-2);display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:1.2rem}
+.proc h3{color:var(--ouro);font-size:1.45rem;font-weight:700;padding:0 8px}
+.proc p{padding:0 8px;font-weight:300;color:rgba(255,255,255,.88)}
+
+/* presentes */
+.gift .wrap{display:grid;gap:34px;align-items:center}
+.gift-img img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:200px 200px var(--raio) var(--raio)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
+.tags span{padding:8px 16px;border-radius:999px;border:1px solid var(--ouro);font-size:.88rem;background:#fff}
+.gift p{font-weight:300;font-size:1.1rem;margin-bottom:24px}
+
+/* rodapé */
+footer{background:var(--vinho);color:#fff;padding:56px 0 28px;text-align:center}
+footer img{width:84px;height:84px;border-radius:50%;margin:0 auto 14px;border:1px solid var(--ouro)}
+footer h3{color:#fff;font-size:1.4rem;font-weight:500}
+.contacts{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:center;margin:20px 0 28px}
+.contacts a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;color:var(--rose)}
+.contacts a:hover{color:#fff;text-decoration:underline}
+.selo{display:inline-block;margin:-10px 0 28px;padding:5px 16px;border:1px solid var(--ouro);border-radius:999px;color:var(--ouro);font-size:.8rem;letter-spacing:.08em}
+.credit{border-top:1px solid rgba(200,164,106,.4);padding-top:14px;font-size:.78rem;color:var(--rose);display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:0 .35em}
+.credit a{display:inline-flex;align-items:center;min-height:44px;padding:0 4px;color:var(--ouro);font-weight:500;text-decoration:none}
+.credit a:hover{text-decoration:underline}
+
+/* whatsapp flutuante */
+.zap{position:fixed;right:16px;bottom:16px;z-index:60;width:58px;height:58px;border-radius:50%;background:#1f8f4e;display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.28);transition:transform .25s}
+.zap:hover{transform:scale(1.08)}
+.zap svg{width:32px;height:32px;fill:#fff}
+
+/* modal */
+.ov{position:fixed;inset:0;z-index:100;background:rgba(43,26,30,.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:none;align-items:flex-end;justify-content:center}
+.ov.open{display:flex;animation:fade .3s}
+.sheet{background:var(--marfim);width:100%;max-height:92vh;overflow-y:auto;border-radius:30px 30px 0 0;padding:22px 20px 28px;animation:up .38s cubic-bezier(.2,.8,.2,1)}
+@keyframes up{from{transform:translateY(100%)}to{transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.sheet-top{display:flex;gap:14px;align-items:center;margin-bottom:18px;position:relative;padding-right:50px}
+.sheet-top img{width:84px;height:104px;object-fit:cover;border-radius:16px;flex:none}
+.sheet-top h3{font-size:1.35rem}
+.sheet-top .preco{font-size:1.15rem}
+.x{position:absolute;right:-6px;top:-6px;width:46px;height:46px;border-radius:50%;border:0;background:rgba(92,31,43,.08);font-size:1.4rem;color:var(--vinho)}
+.field{display:grid;gap:6px;margin-bottom:16px}
+.field label{font-size:.9rem;font-weight:500}
+.field select,.field textarea{width:100%;min-height:48px;padding:12px 14px;border-radius:14px;border:1px solid rgba(92,31,43,.4);background:#fff;font:inherit;color:var(--texto)}
+.field textarea{min-height:96px;resize:vertical}
+.err{color:#9b1c1c;font-size:.85rem;display:none}
+.field.bad .err{display:block}
+.field.bad select{border-color:#9b1c1c}
+.sheet .btn{width:100%}
+.note{font-size:.82rem;text-align:center;margin-top:12px;color:rgba(43,26,30,.75)}
+
+/* transições */
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding:.06em 0 .14em;margin:-.06em 0 -.14em}
+.w>span{display:inline-block;animation:wordUp .9s cubic-bezier(.2,.8,.2,1) both}
+@keyframes wordUp{from{transform:translateY(110%)}}
+@keyframes grow{from{transform:scaleY(0)}}
+@keyframes fadeIn{from{opacity:0}}
+@keyframes heroIn{from{opacity:0;transform:translateY(46px) rotate(-8deg)}to{opacity:1;transform:translateY(0) rotate(-4deg)}}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-12px) rotate(-4deg)}}
+.hero-block{transform-origin:50% 100%;animation:grow 1.1s cubic-bezier(.2,.8,.2,1) .1s both}
+.hero-art img{animation:heroIn .95s cubic-bezier(.2,.8,.2,1) .75s both,float 6s ease-in-out 1.8s infinite}
+.hero-tag{animation:fadeIn .9s ease 1.2s both}
+.pe,.card{position:relative}
+.pe::after,.card::after{content:"";position:absolute;left:14px;right:14px;bottom:0;height:2px;border-radius:2px;background:var(--ouro);transform:scaleX(0);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.pe:hover::after,.card:hover::after,.pe:active::after,.card:active::after,.pe:focus-within::after,.card:focus-within::after{transform:scaleX(1)}
+.pe:active img,.card:active img{transform:scale(1.05)}
+.pe:active{transform:translateY(-5px);box-shadow:0 22px 40px rgba(92,31,43,.14)}
+.js .card{opacity:0;transform:translateY(26px);transition:opacity .7s ease var(--dl,0s),transform .7s cubic-bezier(.2,.8,.2,1) var(--dl,0s),box-shadow .35s}
+.js .card.in{opacity:1;transform:none}
+.js .card.in.done{transition:transform .35s,box-shadow .35s,opacity .3s}
+.js .card.in:hover,.js .card.in:active{transform:translateY(-5px);box-shadow:0 18px 36px rgba(92,31,43,.13)}
+.js .card.leaving{opacity:0;transform:scale(.96)}
+
+/* revelar */
+.js .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+.js .reveal.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .reveal,.js .card{opacity:1;transform:none}
+}
+
+/* tablet / desktop */
+@media (min-width:700px){
+  .grid{grid-template-columns:repeat(3,1fr);gap:18px}
+  .hand .wrap,.gift .wrap{grid-template-columns:1fr 1fr;gap:64px}
+  .steps ol{grid-template-columns:repeat(2,1fr)}
+  .proc{grid-template-columns:repeat(2,1fr)}
+  .steps li:last-child{grid-column:1/-1}
+  .tabs{flex-wrap:wrap;overflow:visible;margin-inline:0;padding-inline:0}
+}
+@media (min-width:960px){
+  :root{--header:76px}
+  nav ul{display:flex}
+  .bar .btn{display:inline-flex}
+  .burger,.mmenu{display:none!important}
+  .hero{padding-top:calc(var(--header) + 56px)}
+  .hero .wrap{grid-template-columns:1.1fr 1fr;align-items:center;gap:30px}
+  .hero h1{font-size:5.3rem}
+  .hero-tag{left:calc(20% + 28px);top:30px}
+  .hero-art{height:600px;margin:0}
+  .hero-block{inset:0 0 40px 20%;border-radius:56px}
+  .hero-art img{width:86%;left:-6%;bottom:0}
+  .bigword{font-size:30vw}
+  .arrows{display:flex}
+  .track{margin:0;padding-inline:0;scroll-padding-inline:0}
+  .pe{flex-basis:290px}
+  .grid{grid-template-columns:repeat(4,1fr)}
+  .card .nome{font-size:.76rem}
+  .steps ol{grid-template-columns:repeat(5,1fr)}
+  .steps li:last-child{grid-column:auto}
+  .steps li{flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:96px 22px 24px;min-height:220px}
+  .steps li::before{left:22px;top:24px;transform:none}
+  .proc{grid-template-columns:repeat(4,1fr)}
+  .ov{align-items:center}
+  .sheet{max-width:520px;border-radius:30px;animation:pop .3s ease}
+  @keyframes pop{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+  .sec,.custom{padding:104px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#inicio" aria-label="Chinelos Vicari — início">
+      <img src="vicari-logo.png" alt="Logo Vicari" width="44" height="44">
+      <span>VICARI</span>
+    </a>
+    <nav aria-label="Menu principal">
+      <ul>
+        <li><a class="lk" href="#inicio">Início</a></li>
+        <li><a class="lk" href="#colecao">Coleção</a></li>
+        <li><a class="lk" href="#pronta-entrega">Pronta entrega</a></li>
+        <li><a class="lk" href="#como-encomendar">Como encomendar</a></li>
+        <li><a class="lk" href="#presentes">Presentes</a></li>
+      </ul>
+    </nav>
+    <a class="btn" data-wa="Olá, Vicari! Quero fazer uma encomenda." href="#" target="_blank" rel="noopener">Encomendar</a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mmenu"><i></i><i></i><i></i></button>
+  </div>
+  <div class="mmenu" id="mmenu">
+    <a class="lk" href="#inicio">Início</a>
+    <a class="lk" href="#colecao">Coleção</a>
+    <a class="lk" href="#pronta-entrega">Pronta entrega</a>
+    <a class="lk" href="#como-encomendar">Como encomendar</a>
+    <a class="lk" href="#presentes">Presentes</a>
+    <a class="btn" data-wa="Olá, Vicari! Quero fazer uma encomenda." href="#" target="_blank" rel="noopener">Encomendar</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <h1>Seus pés merecem joia</h1>
+      <p class="lead">Cada par é bordado à mão, com pérolas e pedrarias, do jeitinho que você sonhou.</p>
+      <div class="pills">
+        <a class="btn pill" href="#colecao">Ver coleção</a>
+        <a class="btn pill" data-wa="Olá, Vicari! Vi o site e quero encomendar um par." href="#" target="_blank" rel="noopener">Encomendar pelo WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="hero-block"></div>
+      <img src="diva-perolas-e-dourado-37-38.jpg" width="734" height="800" alt="Chinelo Diva bege com tiras douradas bordadas com pérolas e cristais" fetchpriority="high">
+      <div class="hero-tag"><b>Diva pérolas e dourado</b>pronta entrega</div>
+    </div>
+  </div>
+</section>
+
+<div class="bigword" aria-hidden="true"><span>VICARI</span></div>
+
+<section class="sec" id="pronta-entrega">
+  <div class="wrap">
+    <div class="pe-top reveal">
+      <div class="sec-head" style="margin-bottom:0">
+        <h2>Peças prontas, tamanho único</h2>
+        <p>Cada par existe só uma vez, no tamanho indicado. Gostou? Garanta antes que acabe.</p>
+        <span class="gold-line"></span>
+      </div>
+      <div class="arrows">
+        <button type="button" id="peprev" aria-label="Ver peças anteriores">‹</button>
+        <button type="button" id="penext" aria-label="Ver próximas peças">›</button>
+      </div>
+    </div>
+    <div class="track reveal" id="track" tabindex="0" role="region" aria-label="Pares de pronta entrega" style="margin-top:34px"></div>
+  </div>
+</section>
+
+<section class="sec" id="colecao" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Coleção</h2>
+      <p>Tudo é feito sob encomenda: você escolhe o modelo, a cor e o tamanho.</p>
+      <span class="gold-line"></span>
+    </div>
+    <div class="tabs reveal" role="tablist" aria-label="Categorias da coleção" id="tabs"></div>
+    <div class="grid" id="grid" role="tabpanel" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="sec hand" id="feito-a-mao">
+  <div class="wrap">
+    <div class="hand-img reveal">
+      <img src="noiva-azul-royal-base-preta-39-40.jpg" loading="lazy" width="604" height="800" alt="Chinelo Noiva azul royal com base preta, bordado à mão com pérolas e pedrarias">
+    </div>
+    <div class="reveal">
+      <div class="sec-head">
+        <h2>Feito à mão</h2>
+        <span class="gold-line"></span>
+      </div>
+      <ul class="points">
+        <li><b>01</b><p>Bordado à mão, peça por peça</p></li>
+        <li><b>02</b><p>Personalize cores, pedrarias e até nome</p></li>
+        <li><b>03</b><p>Embalado na sacolinha Vicari, pronto pra presentear</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec steps" id="como-encomendar">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Como encomendar</h2>
+      <p>É simples, e você conversa direto comigo pelo WhatsApp.</p>
+    </div>
+    <ol class="reveal">
+      <li>Escolha o modelo</li>
+      <li>Escolha a cor e o tamanho</li>
+      <li>Combine os detalhes pelo WhatsApp</li>
+      <li>Pague o sinal por Pix e pronto, seu par entra em produção</li>
+      <li>Receba seu par bordado com carinho</li>
+    </ol>
+  </div>
+</section>
+
+<section class="custom" id="como-e-feito" aria-labelledby="proc-t">
+  <div class="wrap">
+    <div class="reveal">
+      <h2 id="proc-t">Do liso ao bordado: feito à mão para os seus pés</h2>
+      <p class="lead">Cada par é bordado peça por peça, com carinho e atenção em cada detalhe.</p>
+    </div>
+    <ol class="proc" role="list">
+      <li class="reveal">
+        <div class="pmedia"><span class="pn" aria-hidden="true">1</span><img src="processo-1.jpg" width="750" height="1000" loading="lazy" alt="Chinelo liso antes do bordado"></div>
+        <h3>A base</h3>
+        <p>Escolhemos o chinelo no seu tamanho e na cor que você preferir.</p>
+      </li>
+      <li class="reveal" style="transition-delay:.1s">
+        <div class="pmedia"><span class="pn" aria-hidden="true">2</span><img src="processo-2.jpg" width="750" height="1000" loading="lazy" alt="Pedrinhas e pérolas separadas para o bordado"></div>
+        <h3>Os detalhes</h3>
+        <p>Separamos as pedrinhas, pérolas e strass que vão deixar o seu par único.</p>
+      </li>
+      <li class="reveal" style="transition-delay:.2s">
+        <div class="pmedia"><span class="pn" aria-hidden="true">3</span><img src="veronica-rose.jpg" width="800" height="772" loading="lazy" alt="Detalhe do bordado com pérolas aplicadas à mão"></div>
+        <h3>O bordado</h3>
+        <p>Tudo é aplicado à mão, com acabamento caprichado.</p>
+      </li>
+      <li class="reveal" style="transition-delay:.3s">
+        <div class="pmedia"><span class="pn" aria-hidden="true">4</span><img src="noiva-vermelho-base-marinho-39-40.jpg" width="800" height="771" loading="lazy" alt="Chinelo bordado pronto com pedras vermelhas"></div>
+        <h3>Pronto pra você</h3>
+        <p>Seu chinelo sai embalado com carinho, do jeitinho que você pediu.</p>
+      </li>
+    </ol>
+    <a class="btn gold" href="#colecao">Quero o meu</a>
+  </div>
+</section>
+
+<section class="sec gift" id="presentes">
+  <div class="wrap">
+    <div class="gift-img reveal">
+      <img src="primavera-mae-e-filha.jpg" loading="lazy" width="624" height="800" alt="Chinelos Primavera mãe e filha, com flores bordadas em tamanhos adulto e infantil">
+    </div>
+    <div class="reveal">
+      <div class="sec-head" style="margin-bottom:0">
+        <h2>Perfeitos para presentear</h2>
+        <span class="gold-line"></span>
+      </div>
+      <div class="tags">
+        <span>Aniversário</span><span>Madrinhas</span><span>Noivas</span><span>Dia das Mães</span><span>Dia das Crianças</span>
+      </div>
+      <p>Cada par vai na sacolinha branca com a logo Vicari.</p>
+      <a class="btn" data-wa="Olá, Vicari! Quero encomendar um par para presente." href="#" target="_blank" rel="noopener">Encomendar presente</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="vicari-logo.png" alt="Logo Vicari" width="84" height="84" loading="lazy">
+    <h3>Chinelos Vicari — personalizados</h3>
+    <div class="contacts">
+      <a href="https://instagram.com/chinelo_vicari" target="_blank" rel="noopener">Instagram @chinelo_vicari</a>
+      <a data-wa="Olá, Vicari!" href="#" target="_blank" rel="noopener">WhatsApp (14) 99765-9427</a>
+    </div>
+    <span class="selo">Aceitamos Pix</span>
+    <p class="credit">Site desenvolvido por <a href="https://www.instagram.com/astera.cco" target="_blank" rel="noopener" aria-label="Astera SM no Instagram (abre em nova aba)">Astera SM ✦</a></p>
+  </div>
+</footer>
+
+<a class="zap" data-wa="Olá, Vicari! Vim pelo site e queria tirar uma dúvida." href="#" target="_blank" rel="noopener" aria-label="Falar com a Vicari no WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3C9.4 3 4 8.38 4 15c0 2.12.56 4.18 1.62 6L4 29l8.2-1.6A12.03 12.03 0 0 0 16.04 27C22.66 27 28 21.62 28 15S22.66 3 16.04 3zm0 21.9c-1.8 0-3.56-.5-5.1-1.4l-.36-.22-4.86.95.98-4.7-.24-.38A9.8 9.8 0 0 1 6.2 15c0-5.42 4.42-9.82 9.84-9.82 5.42 0 9.76 4.4 9.76 9.82 0 5.4-4.34 9.9-9.76 9.9zm5.4-7.36c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15s-.77.97-.94 1.17c-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.8-1.5-1.77-1.67-2.07-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.5.7.3 1.26.48 1.7.62.72.23 1.37.2 1.88.12.57-.08 1.76-.72 2-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+</a>
+
+<!-- modal de pedido -->
+<div class="ov" id="ov" aria-hidden="true">
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="mTitulo">
+    <div class="sheet-top">
+      <img id="mFoto" alt="" width="84" height="104">
+      <div>
+        <h3 id="mTitulo"></h3>
+        <div class="preco" id="mPreco"></div>
+      </div>
+      <button class="x" type="button" id="mFechar" aria-label="Fechar">×</button>
+    </div>
+    <form id="form" novalidate>
+      <div class="field" id="fCor">
+        <label for="cor">Cor do chinelo</label>
+        <select id="cor" required>
+          <option value="">Escolha a cor</option>
+          <option>Preto</option><option>Branco</option><option>Nude</option><option>Rosa</option><option>Azul</option><option>Vermelho</option><option>Outra</option>
+        </select>
+        <span class="err">Escolha a cor do chinelo.</span>
+      </div>
+      <div class="field" id="fTam">
+        <label for="tam">Tamanho</label>
+        <select id="tam" required></select>
+        <span class="err">Escolha o tamanho.</span>
+      </div>
+      <div class="field">
+        <label for="obs">Observações</label>
+        <textarea id="obs" placeholder="Ex.: nome bordado, cor das pedrarias, data do evento..."></textarea>
+      </div>
+      <button class="btn" type="submit">Enviar pedido pelo WhatsApp</button>
+      <p class="note">O pedido abre no WhatsApp. Lá a gente combina os detalhes e o pagamento por Pix.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+const WHATSAPP = "5514997659427";
+
+const PRODUTOS = [
+  // Pronta entrega
+  {categoria:"Pronta entrega", nome:"Noiva vermelho", preco:135, tamanho:"39/40", foto:"noiva-vermelho-base-marinho-39-40.jpg"},
+  {categoria:"Pronta entrega", nome:"Noiva azul royal", preco:135, tamanho:"39/40", foto:"noiva-azul-royal-base-preta-39-40.jpg"},
+  {categoria:"Pronta entrega", nome:"Noiva turquesa", preco:135, tamanho:"37/38", foto:"noiva-turquesa-base-branca-37-38.jpg"},
+  {categoria:"Pronta entrega", nome:"Noiva roxo", preco:135, tamanho:"35/36", foto:"noiva-roxo-base-preta-35-36.jpg"},
+  {categoria:"Pronta entrega", nome:"Diva pérolas e dourado", preco:135, tamanho:"37/38", foto:"diva-perolas-e-dourado-37-38.jpg"},
+  // Noivas e festa
+  {categoria:"Noivas e festa", nome:"Noiva dourado", preco:135, foto:"noiva-dourado.jpg"},
+  {categoria:"Noivas e festa", nome:"Diva", preco:135, foto:"diva.jpg"},
+  {categoria:"Noivas e festa", nome:"Nude renda francesa", preco:120, foto:"nude-renda-francesa.jpg"},
+  // Flores
+  {categoria:"Flores", nome:"Primavera colorido", preco:85, foto:"primavera-colorido.jpg"},
+  {categoria:"Flores", nome:"Primavera rosa claro", preco:85, foto:"primavera-rosa-claro.jpg"},
+  {categoria:"Flores", nome:"Primavera colorido (preto)", preco:120, foto:"primavera-colorido-preto.jpg"},
+  {categoria:"Flores", nome:"Primavera duas flores", preco:85, foto:"primavera-duas-flores.jpg"},
+  {categoria:"Flores", nome:"Sonho de verão", preco:110, foto:"sonho-de-verao.jpg"},
+  {categoria:"Flores", nome:"Só broche (laço)", preco:75, foto:"so-broche-laco.jpg"},
+  // Verônica
+  {categoria:"Verônica", nome:"Verônica azul", preco:85, foto:"veronica-azul.jpg"},
+  {categoria:"Verônica", nome:"Verônica dourado", preco:85, foto:"veronica-dourado.jpg"},
+  {categoria:"Verônica", nome:"Verônica rosé", preco:85, foto:"veronica-rose.jpg"},
+  // Meia cana
+  {categoria:"Meia cana", nome:"Meia cana coral", preco:100, foto:"meia-cana-coral.jpg"},
+  {categoria:"Meia cana", nome:"Meia cana branco e prata", preco:100, foto:"meia-cana-branco-prata.jpg"},
+  // Sandálias
+  {categoria:"Sandálias", nome:"Sandália vermelha pérolas", preco:110, foto:"sandalia-vermelha-perolas.jpg"},
+  {categoria:"Sandálias", nome:"Sandália verde", preco:90, foto:"sandalia-verde.jpg"},
+  {categoria:"Sandálias", nome:"Sandália flor rosa", preco:125, foto:"sandalia-flor-rosa.jpg"},
+  {categoria:"Sandálias", nome:"Sandália azul", preco:120, foto:"sandalia-azul.jpg"},
+  {categoria:"Sandálias", nome:"Sandália mandala", preco:100, foto:"sandalia-mandala.jpg"},
+  {categoria:"Sandálias", nome:"Medalhão dourado", preco:100, foto:"medalhao-dourado-branco.jpg"},
+  // Infantil
+  {categoria:"Infantil", nome:"Kit infantil rosa (chinelo + arquinho + pulseira)", preco:105, foto:"kit-infantil-rosa-chinelo-arquinho-pulse.jpg"},
+  {categoria:"Infantil", nome:"Kit infantil amarelo", preco:105, foto:"kit-infantil-amarelo.jpg"},
+  {categoria:"Infantil", nome:"Kit infantil pink", preco:105, foto:"kit-infantil-pink-base-preta.jpg"},
+  {categoria:"Infantil", nome:"Kit infantil azul", preco:105, foto:"kit-infantil-azul.jpg"},
+  {categoria:"Infantil", nome:"Kit infantil vermelho", preco:105, foto:"kit-infantil-vermelho.jpg"},
+  {categoria:"Infantil", nome:"Primavera mãe e filha", preco:160, foto:"primavera-mae-e-filha.jpg"},
+  {categoria:"Infantil", nome:"Sandália infantil", preco:90, foto:"sandalia-infantil.jpg"},
+  {categoria:"Infantil", nome:"Sandália infantil pérolas", preco:90, foto:"sandalia-infantil-perolas.jpg"},
+  {categoria:"Infantil", nome:"Infantil primavera", preco:85, foto:"infantil-primavera.jpg"},
+  {categoria:"Infantil", nome:"Infantil lilás e rosa", preco:85, foto:"infantil-lilas-e-rosa.jpg"},
+  // Acessórios
+  {categoria:"Acessórios", nome:"Arquinho vinho", preco:25, foto:"arquinho-vinho.jpg"},
+  {categoria:"Acessórios", nome:"Arquinho pink", preco:25, foto:"arquinho-pink.jpg"}
+];
+const ABAS = ["Todos","Noivas e festa","Flores","Verônica","Meia cana","Sandálias","Infantil","Acessórios"];
+const TAMANHOS = ["25/26","27/28","29/30","31/32","33/34","35/36","37/38","39/40","41/42"];
+
+/* ===== utilidades ===== */
+const $ = (s, el=document) => el.querySelector(s);
+const brl = n => "R$ " + n.toFixed(2).replace(".", ",");
+const waUrl = txt => "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(txt);
+const alt = p => "Chinelo " + p.nome + ", bordado à mão — Chinelos Vicari";
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+document.querySelectorAll("[data-wa]").forEach(a => a.href = waUrl(a.dataset.wa));
+
+/* ===== menu mobile ===== */
+const burger = $("#burger"), mmenu = $("#mmenu");
+function menu(open){
+  mmenu.classList.toggle("open", open);
+  burger.setAttribute("aria-expanded", open);
+  burger.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+}
+burger.onclick = () => menu(!mmenu.classList.contains("open"));
+mmenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => menu(false)));
+
+/* ===== pronta entrega ===== */
+const track = $("#track");
+track.innerHTML = PRODUTOS.filter(p => p.categoria === "Pronta entrega").map(p => `
+  <article class="pe">
+    <div class="ph">
+      <img src="${p.foto}" alt="${esc(alt(p))}, tamanho ${p.tamanho}" loading="lazy" width="600" height="800">
+      <span class="sel">Nº ${p.tamanho}</span>
+    </div>
+    <div class="info">
+      <h3 class="nome" style="font-family:var(--sans);color:inherit">${esc(p.nome)}</h3>
+      <div class="preco">${brl(p.preco)}</div>
+      <div class="pix">Pagamento por Pix</div>
+      <a class="btn sm" target="_blank" rel="noopener"
+         href="${waUrl(`Olá, Vicari! Quero garantir o par pronta entrega:\n\n*Modelo:* ${p.nome}\n*Tamanho:* ${p.tamanho}\n*Preço:* ${brl(p.preco)}`)}">Garantir o meu</a>
+    </div>
+  </article>`).join("");
+const passo = () => (track.querySelector(".pe")?.offsetWidth || 280) + 18;
+$("#peprev").onclick = () => track.scrollBy({left:-passo(), behavior:"smooth"});
+$("#penext").onclick = () => track.scrollBy({left: passo(), behavior:"smooth"});
+
+/* ===== coleção ===== */
+const colecao = PRODUTOS.filter(p => p.categoria !== "Pronta entrega");
+const grid = $("#grid"), tabs = $("#tabs");
+grid.innerHTML = colecao.map((p, i) => `
+  <article class="card" data-cat="${esc(p.categoria)}">
+    <div class="ph">
+      <img src="${p.foto}" alt="${esc(alt(p))}" loading="lazy" width="600" height="800">
+      <span class="etq">Sob encomenda</span>
+    </div>
+    <div class="info">
+      <h3 class="nome" style="font-family:var(--sans);color:inherit">${esc(p.nome)}</h3>
+      <div class="preco">${brl(p.preco)}</div>
+      <button type="button" class="btn sm" data-i="${i}">Encomendar</button>
+    </div>
+  </article>`).join("");
+
+tabs.innerHTML = ABAS.map((a, i) => `<button type="button" class="tab" role="tab" aria-selected="${i===0}" tabindex="${i===0?0:-1}" data-cat="${a}">${a}</button>`).join("");
+let ft1, ft2;
+function trocar(cat){
+  clearTimeout(ft1); clearTimeout(ft2);
+  const todos = [...grid.children];
+  const mostrar = todos.filter(c => cat === "Todos" || c.dataset.cat === cat);
+  todos.filter(c => !c.classList.contains("hide")).forEach(c => c.classList.add("leaving"));
+  ft1 = setTimeout(() => {
+    todos.forEach(c => {
+      const on = mostrar.includes(c);
+      c.classList.toggle("hide", !on);
+      if (on){ c.classList.add("in","done","leaving"); c.style.transition = "none"; c.style.removeProperty("--dl"); }
+      else c.classList.remove("leaving");
+    });
+    void grid.offsetHeight;
+    mostrar.forEach((c, i) => { c.style.transition = ""; c.style.transitionDelay = (Math.min(i,12) * 40) + "ms"; c.classList.remove("leaving"); });
+    ft2 = setTimeout(() => mostrar.forEach(c => c.style.transitionDelay = ""), 400 + Math.min(mostrar.length,12) * 40);
+  }, 260);
+}
+function filtrar(btn){
+  tabs.querySelectorAll(".tab").forEach(t => { const on = t === btn; t.setAttribute("aria-selected", on); t.tabIndex = on ? 0 : -1; });
+  const cat = btn.dataset.cat;
+  trocar(cat);
+}
+tabs.addEventListener("click", e => { const b = e.target.closest(".tab"); if (b) filtrar(b); });
+tabs.addEventListener("keydown", e => {
+  if (!["ArrowRight","ArrowLeft"].includes(e.key)) return;
+  const t = [...tabs.querySelectorAll(".tab")], i = t.indexOf(document.activeElement);
+  const n = t[(i + (e.key === "ArrowRight" ? 1 : -1) + t.length) % t.length];
+  n.focus(); filtrar(n);
+});
+
+/* ===== modal ===== */
+const ov = $("#ov"), sheet = $(".sheet", ov), form = $("#form");
+$("#tam").innerHTML = `<option value="">Escolha o tamanho</option>` + TAMANHOS.map(t => `<option>${t}</option>`).join("");
+let atual = null, voltarFoco = null;
+
+function abrir(p, gatilho){
+  atual = p; voltarFoco = gatilho;
+  $("#mFoto").src = p.foto; $("#mFoto").alt = alt(p);
+  $("#mTitulo").textContent = p.nome; $("#mPreco").textContent = brl(p.preco);
+  form.reset();
+  form.querySelectorAll(".field").forEach(f => f.classList.remove("bad"));
+  ov.classList.add("open"); ov.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+  setTimeout(() => $("#cor").focus(), 60);
+}
+function fechar(){
+  ov.classList.remove("open"); ov.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+  voltarFoco && voltarFoco.focus();
+}
+grid.addEventListener("click", e => {
+  const b = e.target.closest("button[data-i]");
+  if (b) abrir(colecao[+b.dataset.i], b);
+});
+$("#mFechar").onclick = fechar;
+ov.addEventListener("click", e => { if (e.target === ov) fechar(); });
+document.addEventListener("keydown", e => {
+  if (!ov.classList.contains("open")) return;
+  if (e.key === "Escape") return fechar();
+  if (e.key === "Tab"){
+    const f = [...sheet.querySelectorAll("button,select,textarea")].filter(x => !x.disabled);
+    const a = f[0], z = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === a){ e.preventDefault(); z.focus(); }
+    else if (!e.shiftKey && document.activeElement === z){ e.preventDefault(); a.focus(); }
+  }
+});
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const cor = $("#cor").value, tam = $("#tam").value, obs = $("#obs").value.trim();
+  $("#fCor").classList.toggle("bad", !cor);
+  $("#fTam").classList.toggle("bad", !tam);
+  if (!cor || !tam) return (!cor ? $("#cor") : $("#tam")).focus();
+  const msg = `Olá, Vicari! Quero encomendar:\n\n*Modelo:* ${atual.nome}\n*Preço:* ${brl(atual.preco)}\n*Cor do chinelo:* ${cor}\n*Tamanho:* ${tam}\n*Observações:* ${obs || "—"}`;
+  window.open(waUrl(msg), "_blank", "noopener");
+});
+
+/* ===== animação ao rolar ===== */
+const reduz = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const alvos = document.querySelectorAll(".reveal");
+const cartas = document.querySelectorAll(".card");
+if ("IntersectionObserver" in window && !reduz){
+  const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } }), {threshold:.12});
+  alvos.forEach(el => io.observe(el));
+  const ioc = new IntersectionObserver(es => {
+    es.filter(en => en.isIntersecting)
+      .sort((a, b) => a.target.compareDocumentPosition(b.target) & 4 ? -1 : 1)
+      .forEach((en, i) => {
+        const c = en.target;
+        c.style.setProperty("--dl", (i * 80) + "ms");
+        c.classList.add("in");
+        ioc.unobserve(c);
+        setTimeout(() => { c.classList.add("done"); c.style.removeProperty("--dl"); }, i * 80 + 800);
+      });
+  }, {threshold:.1, rootMargin:"0px 0px -4% 0px"});
+  cartas.forEach(c => ioc.observe(c));
+} else {
+  alvos.forEach(el => el.classList.add("in"));
+  cartas.forEach(c => c.classList.add("in","done"));
+}
+
+/* ===== hero: título palavra por palavra ===== */
+const h1 = $(".hero h1");
+if (!reduz){
+  const frase = h1.textContent.trim();
+  h1.setAttribute("aria-label", frase);
+  h1.innerHTML = frase.split(" ").map((w, i) => `<span class="w" aria-hidden="true"><span style="animation-delay:${(.15 + i * .12).toFixed(2)}s">${w}</span></span>`).join(" ");
+}
+
+/* ===== rolagem: menu que encolhe e parallax da palavra gigante ===== */
+const topo = $("header"), bigwordBox = $(".bigword"), bigword = $(".bigword span");
+let ticking = false;
+function aoRolar(){
+  topo.classList.toggle("scrolled", window.scrollY > 24);
+  if (reduz) return;
+  const r = bigwordBox.getBoundingClientRect(), vh = window.innerHeight;
+  if (r.bottom < 0 || r.top > vh) return;
+  const p = (vh - r.top) / (vh + r.height);
+  bigword.style.transform = `translate3d(${((p - .5) * -16).toFixed(2)}vw,0,0)`;
+}
+addEventListener("scroll", () => {
+  if (ticking) return;
+  ticking = true;
+  requestAnimationFrame(() => { ticking = false; aoRolar(); });
+}, {passive:true});
+aoRolar();
+</script>
+</body>
+</html>
