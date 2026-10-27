@@ -561,7 +561,16 @@ const waUrl = txt => "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent
 const alt = p => "Chinelo " + p.nome + ", bordado à mão — Chinelos Vicari";
 const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
-document.querySelectorAll("[data-wa]").forEach(a => a.href = waUrl(a.dataset.wa));
+/* ===== contador (GoatCounter) ===== */
+const slug = t => t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+function gcEvento(path, title){
+  try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({path, title, event: true}); } catch(e){}
+}
+
+document.querySelectorAll("[data-wa]").forEach(a => {
+  a.href = waUrl(a.dataset.wa);
+  a.addEventListener("click", () => gcEvento("whatsapp-geral", "Clicou no WhatsApp"));
+});
 
 /* ===== menu mobile ===== */
 const burger = $("#burger"), mmenu = $("#mmenu");
@@ -585,10 +594,12 @@ track.innerHTML = PRODUTOS.filter(p => p.categoria === "Pronta entrega").map(p =
       <h3 class="nome" style="font-family:var(--sans);color:inherit">${esc(p.nome)}</h3>
       <div class="preco">${brl(p.preco)}</div>
       <div class="pix">Pagamento por Pix</div>
-      <a class="btn sm" target="_blank" rel="noopener"
+      <a class="btn sm" target="_blank" rel="noopener" data-modelo="${esc(p.nome)}"
          href="${waUrl(`Olá, Vicari! Quero garantir o par pronta entrega:\n\n*Modelo:* ${p.nome}\n*Tamanho:* ${p.tamanho}\n*Preço:* ${brl(p.preco)}`)}">Garantir o meu</a>
     </div>
   </article>`).join("");
+track.querySelectorAll("a[data-modelo]").forEach(a => a.addEventListener("click", () =>
+  gcEvento("pedido-pronta-entrega/" + slug(a.dataset.modelo), "Garantiu: " + a.dataset.modelo)));
 const passo = () => (track.querySelector(".pe")?.offsetWidth || 280) + 18;
 $("#peprev").onclick = () => track.scrollBy({left:-passo(), behavior:"smooth"});
 $("#penext").onclick = () => track.scrollBy({left: passo(), behavior:"smooth"});
@@ -631,6 +642,7 @@ function trocar(cat){
 function filtrar(btn){
   tabs.querySelectorAll(".tab").forEach(t => { const on = t === btn; t.setAttribute("aria-selected", on); t.tabIndex = on ? 0 : -1; });
   const cat = btn.dataset.cat;
+  gcEvento("categoria/" + slug(cat), "Categoria: " + cat);
   trocar(cat);
 }
 tabs.addEventListener("click", e => { const b = e.target.closest(".tab"); if (b) filtrar(b); });
@@ -648,6 +660,7 @@ let atual = null, voltarFoco = null;
 
 function abrir(p, gatilho){
   atual = p; voltarFoco = gatilho;
+  gcEvento("modelo-aberto/" + slug(p.nome), "Abriu: " + p.nome);
   $("#mFoto").src = p.foto; $("#mFoto").alt = alt(p);
   $("#mTitulo").textContent = p.nome; $("#mPreco").textContent = brl(p.preco);
   form.reset();
@@ -684,6 +697,7 @@ form.addEventListener("submit", e => {
   $("#fTam").classList.toggle("bad", !tam);
   if (!cor || !tam) return (!cor ? $("#cor") : $("#tam")).focus();
   const msg = `Olá, Vicari! Quero encomendar:\n\n*Modelo:* ${atual.nome}\n*Preço:* ${brl(atual.preco)}\n*Cor do chinelo:* ${cor}\n*Tamanho:* ${tam}\n*Observações:* ${obs || "—"}`;
+  gcEvento("pedido-encomenda/" + slug(atual.nome), "Pediu: " + atual.nome);
   window.open(waUrl(msg), "_blank", "noopener");
 });
 
@@ -737,5 +751,6 @@ addEventListener("scroll", () => {
 }, {passive:true});
 aoRolar();
 </script>
+<script data-goatcounter="https://vicari.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
