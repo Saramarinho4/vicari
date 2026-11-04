@@ -512,6 +512,7 @@ const PRODUTOS = [
   {categoria:"Pronta entrega", nome:"Noiva roxo", preco:135, tamanho:"35/36", foto:"noiva-roxo-base-preta-35-36.jpg"},
   {categoria:"Pronta entrega", nome:"Diva pérolas e dourado", preco:135, tamanho:"37/38", foto:"diva-perolas-e-dourado-37-38.jpg"},
   // Noivas e festa
+  {categoria:"Noivas e festa", nome:"Noiva preto e dourado", preco:120, foto:"noiva-preto-e-dourado.jpg"},
   {categoria:"Noivas e festa", nome:"Noiva dourado", preco:135, foto:"noiva-dourado.jpg"},
   {categoria:"Noivas e festa", nome:"Diva", preco:135, foto:"diva.jpg"},
   {categoria:"Noivas e festa", nome:"Nude renda francesa", preco:120, foto:"nude-renda-francesa.jpg"},
@@ -657,12 +658,16 @@ tabs.addEventListener("keydown", e => {
 const ov = $("#ov"), sheet = $(".sheet", ov), form = $("#form");
 $("#tam").innerHTML = `<option value="">Escolha o tamanho</option>` + TAMANHOS.map(t => `<option>${t}</option>`).join("");
 let atual = null, voltarFoco = null;
+const CORES_PADRAO = $("#cor").innerHTML;
 
 function abrir(p, gatilho){
   atual = p; voltarFoco = gatilho;
   gcEvento("modelo-aberto/" + slug(p.nome), "Abriu: " + p.nome);
   $("#mFoto").src = p.foto; $("#mFoto").alt = alt(p);
   $("#mTitulo").textContent = p.nome; $("#mPreco").textContent = brl(p.preco);
+  $("#cor").innerHTML = p.cores
+    ? `<option value="">Escolha a cor</option>` + p.cores.map(c => `<option>${c}</option>`).join("")
+    : CORES_PADRAO;
   form.reset();
   form.querySelectorAll(".field").forEach(f => f.classList.remove("bad"));
   ov.classList.add("open"); ov.setAttribute("aria-hidden", "false");
